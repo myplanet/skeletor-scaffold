@@ -11,7 +11,7 @@
     "source": "http://cgit.drupalcode.org/skeletor_scaffold"
   },
   "require": {
-    "myplanetdigital/react-redux-skeletor": "*",
+    "myplanet/react-redux-skeletor": "*",
     "composer/installers": "^1.2",
     "oomphinc/composer-installers-extender": "dev-master"
   },
@@ -19,7 +19,7 @@
     {
       "type": "package",
       "package": {
-        "name": "myplanetdigital/react-redux-skeletor",
+        "name": "myplanet/react-redux-skeletor",
         "version": "1.0",
         "type": "npm-package",
         "source": {
@@ -33,7 +33,22 @@
         }
       }
     }
-  ],
+ ],
+ "autoload": {
+    "classmap": ["scripts/composer/NpmPackage.php"]
+  },
+ "scripts": {
+     "npm-build": "DrupalSkeletor\\composer\\NpmPackage::npmBuild",
+     "npm-test": "DrupalSkeletor\\composer\\NpmPackage::npmTest",
+     "post-install-cmd": [
+        "DrupalSkeletor\\composer\\NpmPackage::npmInstall",
+        "DrupalSkeletor\\composer\\NpmPackage::npmBuild"
+     ],
+     "post-update-cmd": [
+        "DrupalSkeletor\\composer\\NpmPackage::npmBuild"
+     ]
+ },
+
   "extra": {
     "installer-paths": {
        "js/{$name}": ["type:npm-package"]
