@@ -1,0 +1,7 @@
+name: skeletor_scaffold
+type: module
+description: Skeletor Scaffolding
+core: 8.x
+package: Skeletor
+dependencies:
+  - rest

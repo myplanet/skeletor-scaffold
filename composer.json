@@ -1,0 +1,43 @@
+{
+  "name": "drupal/skeletor_scaffold",
+  "type": "drupal-module",
+  "description": "Skeletor Scaffolding",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/skeletor_scaffold",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/skeletor_scaffold",
+    "source": "http://cgit.drupalcode.org/skeletor_scaffold"
+  },
+  "require": {
+    "myplanetdigital/react-redux-skeletor": "*",
+    "composer/installers": "^1.2",
+    "oomphinc/composer-installers-extender": "dev-master"
+  },
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "myplanetdigital/react-redux-skeletor",
+        "version": "1.0",
+        "type": "npm-package",
+        "source": {
+          "type": "git",
+          "reference": "master",
+          "url": "git@github.com:myplanet/react-redux-skeletor.git"
+        },
+        "require": {
+          "composer/installers": "^1.2",
+          "oomphinc/composer-installers-extender": "dev-master"
+        }
+      }
+    }
+  ],
+  "extra": {
+    "installer-paths": {
+       "js/{$name}": ["type:npm-package"]
+    },
+    "installer-types": ["npm-package"]
+  }
+}
