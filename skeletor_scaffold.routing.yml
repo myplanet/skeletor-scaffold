@@ -1,0 +1,8 @@
+
+skeletor_scaffold.skeletor_controller_reactApp:
+  path: 'skeletor_scaffold'
+  defaults:
+    _controller: '\Drupal\skeletor_scaffold\Controller\SkeletorController::reactApp'
+    _title: 'skeletor'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,4 @@
+app:
+  version: VERSION
+  js:
+    npm-package/react-redux-skeletor/dist/app.js: {preprocess: false}
