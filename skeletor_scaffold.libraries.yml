@@ -1,4 +1,4 @@
-app:
+skeletor_scaffold.app:
   version: VERSION
   js:
-    npm-package/react-redux-skeletor/dist/app.js: {preprocess: false}
+    http://local.skeletor.com/modules/npm-packages/react-redux-skeletor/dist/app.js: { type: external, minified: true, preprocess: false }

@@ -21,7 +21,7 @@ class SkeletorController extends ControllerBase {
       '#attributes' => ['id' => 'app'],
       'loading'     => ['#markup' => $this->t('Loading...')],
       '#attached'   => [
-        'library' => ['skeletor_scaffold/app']
+        'library' => ['skeletor_scaffold.app']
       ],
     ];
   }
