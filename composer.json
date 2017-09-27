@@ -1,15 +1,11 @@
 {
-  "name": "drupal/skeletor_scaffold",
+  "name": "myplanet/skeletor-scaffold",
   "type": "drupal-module",
   "description": "Skeletor Scaffolding",
   "keywords": ["Drupal"],
   "license": "GPL-2.0+",
-  "homepage": "https://www.drupal.org/project/skeletor_scaffold",
+  "homepage": "https://github.com/myplanet/skeletor-scaffold",
   "minimum-stability": "dev",
-  "support": {
-    "issues": "https://www.drupal.org/project/issues/skeletor_scaffold",
-    "source": "http://cgit.drupalcode.org/skeletor_scaffold"
-  },
   "require": {
     "composer/installers": "^1.2",
     "oomphinc/composer-installers-extender": "dev-master",
