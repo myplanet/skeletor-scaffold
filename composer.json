@@ -11,9 +11,10 @@
     "source": "http://cgit.drupalcode.org/skeletor_scaffold"
   },
   "require": {
-    "myplanet/react-redux-skeletor": "*",
     "composer/installers": "^1.2",
-    "oomphinc/composer-installers-extender": "dev-master"
+    "oomphinc/composer-installers-extender": "dev-master",
+    "webflo/drupal-finder": "^1.0",
+    "myplanet/react-redux-skeletor": "*"
   },
   "repositories": [
     {
@@ -24,7 +25,7 @@
         "type": "npm-package",
         "source": {
           "type": "git",
-          "reference": "master",
+          "reference": "presentation",
           "url": "git@github.com:myplanet/react-redux-skeletor.git"
         },
         "require": {
@@ -35,23 +36,25 @@
     }
  ],
  "autoload": {
-    "classmap": ["scripts/composer/NpmPackage.php"]
+    "classmap": ["scripts/skeletor/NpmPackage.php"]
   },
  "scripts": {
-     "npm-build": "DrupalSkeletor\\composer\\NpmPackage::npmBuild",
-     "npm-test": "DrupalSkeletor\\composer\\NpmPackage::npmTest",
-     "post-install-cmd": [
-        "DrupalSkeletor\\composer\\NpmPackage::npmInstall",
-        "DrupalSkeletor\\composer\\NpmPackage::npmBuild"
-     ],
-     "post-update-cmd": [
-        "DrupalSkeletor\\composer\\NpmPackage::npmBuild"
-     ]
+   "npm-install": "DrupalSkeletor\\NpmPackage::npmInstall",
+   "npm-build": "DrupalSkeletor\\NpmPackage::npmBuild",
+   "npm-test": "DrupalSkeletor\\NpmPackage::npmTest",
+   "post-install-cmd": [
+      "@composer npm-install",
+      "@composer npm-build"
+   ],
+   "post-update-cmd": [
+      "@composer npm-install",
+      "@composer npm-build"
+   ]
  },
 
   "extra": {
     "installer-paths": {
-       "js/{$name}": ["type:npm-package"]
+       "npm-package/{$name}": ["type:npm-package"]
     },
     "installer-types": ["npm-package"]
   }
